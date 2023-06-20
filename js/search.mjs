@@ -1,15 +1,18 @@
+import tvMovie from "./tvFilm.mjs";
+
 class searchQuery {
   /*
-   * Busca de manera asíncrona películas y programas de TV utilizando la cadena de consulta proporcionada. 
+   * Busca de manera asíncrona películas y programas de TV utilizando la cadena de consulta proporcionada.
    * Devuelve un array de instancias de `tvMovie` que representan los resultados de la búsqueda.
    *
    * @param {string} query - La cadena de consulta a utilizar.
    * @return {array} Un array de instancias de `tvMovie` que representan los resultados de la búsqueda.
    */
   async search(query) {
-    let searched = [];  // Declarar el array de resultados
+    let searched = []; // Declarar el array de resultados
     try {
-      let response = await fetch(       // Ejecutar la petición
+      let response = await fetch(
+        // Ejecutar la petición
         `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=es-ES&page=1`,
         {
           method: "GET",
@@ -20,8 +23,9 @@ class searchQuery {
           },
         }
       );
-      let data = await response.json();         // Obtener los datos y tranformarlos en un objeto
-      searched = data.results.forEach((element) => new tvMovie(element));   // Crear los objetos con los datos
+      let data = await response.json(); // Obtener los datos y tranformarlos en un objeto
+      console.log(data);
+      searched = data.results.forEach((element) => new tvMovie(element)); // Crear los objetos con los datos
     } catch (error) {
       console.error(error);
     }
@@ -29,7 +33,8 @@ class searchQuery {
   }
 }
 
-export default searchQuery;     // Exportar el objeto
+export default searchQuery; // Exportar el objeto
 
-// let search = new searchQuery();
-// search.search("robert");
+// Ejemplo
+let search = new searchQuery();
+search.search("avengers");
