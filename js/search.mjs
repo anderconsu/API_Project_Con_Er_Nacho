@@ -24,12 +24,11 @@ class searchQuery {
         }
       );
       let data = await response.json(); // Obtener los datos y tranformarlos en un objeto
-      console.log(data);
-      searched = data.results.forEach((element) => new tvMovie(element)); // Crear los objetos con los datos
+      searched = data.results.map((element) => new tvMovie(element)); // Crear los objetos con los datos
     } catch (error) {
       console.error(error);
     }
-    return searched;
+    return searched; // Retornar el array de objetos ya modificados
   }
 }
 
@@ -38,3 +37,5 @@ export default searchQuery; // Exportar el objeto
 // Ejemplo
 let search = new searchQuery();
 search.search("avengers");
+let resutlado = await search.search("avengers");
+console.log(resutlado)
