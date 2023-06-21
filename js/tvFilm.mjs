@@ -8,7 +8,7 @@ class tvMovie {
     this.id = media.id;
     this.url = media.media_type == "tv" ? `https://themoviedb.org/tv/${media.id}?language=es` : `https://themoviedb.org/movie/${media.id}?language=es`;
     this.overview = media.overview;
-    this.poster_path = media.poster_path.length > 0 ? `https://image.tmdb.org/t/p/w500/${media.poster_path}` : "https://eapp.org/wp-content/uploads/2018/05/poster_placeholder.jpg";
+    this.poster_path = media.poster_path ? `https://image.tmdb.org/t/p/w500/${media.poster_path}` : "https://eapp.org/wp-content/uploads/2018/05/poster_placeholder.jpg";
     this.media_type = media.media_type;
     this.vote_average = media.vote_average;
   }
