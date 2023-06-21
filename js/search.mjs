@@ -11,10 +11,9 @@ class searchQuery {
   async search(query) {
     let searched = []; // Declarar el array de resultados
     try {
-      console.log(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=es-ES&page=1`)
       let response = await fetch(
         // Ejecutar la petición
-        `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=es-ES&page=1`,
+        `https://api.themoviedb.org/3/search/multi?query=${encodeURIComponent(query)}&include_adult=false&language=es-ES&page=1`,
         {
           method: "GET",
           headers: {
@@ -37,5 +36,5 @@ export default searchQuery; // Exportar el objeto
 
 // Ejemplo
 let search = new searchQuery();
-let resutlado = await search.search("El%20padrino");
+let resutlado = await search.search("El padrino");
 console.log(resutlado)
