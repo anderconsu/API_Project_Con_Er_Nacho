@@ -30,7 +30,7 @@ class AllMedia {
         try {
             // log de categoria y plataforma para ver que estamos haciendo XD
             console.log("categoria " + categoria);
-            console.log("plataforma" + plataforma);
+            console.log("plataforma " + plataforma);
             //
             let responseMovie = await fetch(
                 // Ejecutar la petición para las peliculas

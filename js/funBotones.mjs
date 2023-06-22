@@ -5,61 +5,72 @@ class FunBotones {
         this.renderGeneral = new renderGeneral();
     }
 
-    addFunciones(plataforma) {
+    addFunciones() {
+        function isItSelected(){
+            let buttons = document.getElementsByClassName('selectable')
+            if (buttons[0].classList.contains("seleccionado") && buttons[1].classList.contains("seleccionado")) {
+                return "all"
+            }else if (buttons[1].classList.contains("seleccionado")) {
+                return "tv"
+            }else if (buttons[0].classList.contains("seleccionado")) {
+                return "movie"
+            }
+        };
         let accion = document.getElementById("accion");
         accion.addEventListener("click", () => {
+            console.log(isItSelected());
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.accion,
-                plataforma
+                isItSelected()
             );
         });
         let aventura = document.getElementById("aventura");
         aventura.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.aventura,
-                plataforma
+                isItSelected()
             );
         });
         let animacion = document.getElementById("animacion");
         animacion.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.animacion,
-                plataforma
+                isItSelected()
             );
         });
         let comedia = document.getElementById("comedia");
         comedia.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.comedia,
-                plataforma
+                isItSelected()
             );
         });
         let crimen = document.getElementById("crimen");
         crimen.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.crimen,
-                plataforma
+                isItSelected()
             );
         });
         let documental = document.getElementById("documental");
         documental.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.documental,
-                plataforma
+                isItSelected()
             );
         });
         let drama = document.getElementById("drama");
         drama.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.drama,
-                plataforma
+                isItSelected()
             );
         });
         let misterio = document.getElementById("misterio");
         misterio.addEventListener("click", () => {
             this.renderGeneral.filter(
                 this.renderGeneral.categorias.categorias.misterio,
-                plataforma
+                isItSelected()
             );
         });
         let form = document.querySelector("form");
