@@ -71,6 +71,33 @@ class FunBotones {
             document.getElementById("buscador").value = "";
             
         })
+        function toggleButton(obj) {
+            obj.classList.toggle('seleccionado');}
+
+        let buttons = document.getElementsByClassName('selectable')
+        buttons[0].addEventListener('click', () => {
+            toggleButton(buttons[0]);
+            if (buttons[0].classList.contains('seleccionado')) {
+                this.renderGeneral.renderGeneral("movie");
+                console.log("movie searched")
+              } else { 
+                this.renderGeneral.renderGeneral();
+                console.log("all searched")
+            }
+            this.renderGeneral.trending.getData("movie");
+        });
+        buttons[1].addEventListener('click', () => {
+            toggleButton(buttons[1]);
+            if (buttons[1].classList.contains('seleccionado')) {
+                this.renderGeneral.renderGeneral("tv");
+                console.log("tv searched")
+              } else { 
+                this.renderGeneral.renderGeneral();
+                console.log("all searched")
+            }
+        });
+        
+
     }
 }
 export default FunBotones;

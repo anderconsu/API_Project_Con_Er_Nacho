@@ -2,10 +2,10 @@ import tvMovie from "./tvFilm.mjs";
 
 class trending {
     
-    async getData(){
+    async getData(type = "all"){
         let trendingList = [];
         try {
-            let response = await fetch("https://api.themoviedb.org/3/trending/all/week?language=es",{
+            let response = await fetch(`https://api.themoviedb.org/3/trending/${type}/week?language=es`,{
             method: 'GET',    
             headers: {
                 accept:'application/json',

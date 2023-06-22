@@ -38,6 +38,9 @@ body {
     height: 2rem;
     background-color: #ca3568;
 }
+.seleccionado {
+    background-color: white;
+}
 form {
     width: 70%;
     margin: auto;

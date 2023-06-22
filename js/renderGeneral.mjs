@@ -17,10 +17,9 @@ class renderGeneral {
         seccion.appendChild(element.renderTvMovie());
     });
   }
-  async renderGeneral() {
-    let trending = await this.trending.getData();
+  async renderGeneral(tipo) {
+    let trending = await this.trending.getData(tipo);
     this.append(trending);
-    
   }
   async search(searchword){
     let search = await this.searchQuery.search(searchword);
