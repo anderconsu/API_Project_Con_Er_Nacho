@@ -9,7 +9,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-  }
+}
 
 body {
     background-color: #000000;
@@ -17,16 +17,25 @@ body {
 }
 header {
     display: flex;
+    height: 13vh;
+    border: 1px solid #5ce1e6;
+    margin: 1rem;
 }
-
+header div {
+    margin-left: 0.5rem;
+}
 form {
     width: 70%;
     margin: auto;
     display: flex;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 img {
-    width: 100%;
+    height: 100%;
 }
 
 #listaCategorias {
@@ -34,15 +43,15 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: auto;
-    gap: 1rem;
-    padding: 1rem;
+    margin: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1%;
 }
 
 #listaCategorias li {
     width: calc(33% - 1rem);
     border: 1px solid #5ce1e6;
-    margin: auto;
 }
 
 #listaCategorias button {
@@ -51,17 +60,66 @@ img {
     padding: 2px;
 }
 
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: auto 1rem;
+    flex-direction: column;
+}
+.articulo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    border: 1px solid #ca3568;
+    padding: 1rem;
+}
+.articulo .divposter {
+    height: 25vh;
+    margin: auto;
+}
+.articulo .divinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.articulo .titulo {
+    color: #ca3568;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+.articulo .descripcion {
+    font-size: 1rem;
+}
+.articulo button {
+    background-color: #5ce1e6;
+    width: 5rem;
+}
+.articulo img {
+    height: 100%;
+}
 
 /* MOBILE FIRST */
 
 /* 440px */
-@media only screen and (min-width: 440px) {
+@media only screen and (min-width: 768px) {
+    section {
+        flex-direction: row;
+    }
+    .articulo {
+        display: flex;
+        gap: 1rem;
+        border: 1px solid #ca3568;
+        padding: 1rem;
+        width: calc(50% - 1rem);
+    }
+}
 
-  
-  }
-  
-  /* 768px */
-  @media only screen and (min-width: 768px) {
-   
-  }
-  
+/* 768px */
+@media only screen and (min-width: 1024px) {
+    .articulo {
+        width: calc(50% - 1rem);
+        flex-wrap: nowrap;
+    }
+}

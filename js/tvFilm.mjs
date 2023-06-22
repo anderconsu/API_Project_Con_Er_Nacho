@@ -16,11 +16,17 @@ class tvMovie {
   renderTvMovie() {
     
     let articulo = document.createElement("article");
+    articulo.classList.add("articulo");
 // 
+    let div = document.createElement("div");
+    div.classList.add("divposter");
+
     let poster = document.createElement("img");
     poster.src = this.poster_path;
     poster.alt = this.name;
     poster.classList.add("poster");
+    let divinfo = document.createElement("div");
+    divinfo.classList.add("divinfo");
 
     let titulo = document.createElement("h2");
     titulo.textContent = this.name;
@@ -31,7 +37,7 @@ class tvMovie {
     descripcion.classList.add("descripcion");
 
     let nota = document.createElement("p");
-    nota.textContent = this.vote_average;
+    nota.textContent = `Nota: ${Math.round(this.vote_average * 10)/10}`;
     nota.classList.add("nota");
 
     let boton = document.createElement("button");
@@ -41,11 +47,13 @@ class tvMovie {
       window.open(this.url);
     })
     
-    articulo.appendChild(poster);
-    articulo.appendChild(titulo);
-    articulo.appendChild(descripcion);
-    articulo.appendChild(nota);
-    articulo.appendChild(boton);
+    div.appendChild(poster);
+    articulo.appendChild(div);
+    divinfo.appendChild(titulo);
+    divinfo.appendChild(descripcion);
+    divinfo.appendChild(nota);
+    divinfo.appendChild(boton);
+    articulo.appendChild(divinfo);
 
     return articulo;
 
