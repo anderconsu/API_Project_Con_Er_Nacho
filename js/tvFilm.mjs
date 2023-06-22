@@ -37,6 +37,9 @@ class tvMovie {
     let boton = document.createElement("button");
     boton.textContent = "Más Info.";
     boton.classList.add("boton");
+    boton.addEventListener("click", () => {
+      window.open(this.url);
+    })
     
     articulo.appendChild(poster);
     articulo.appendChild(titulo);
