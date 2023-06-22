@@ -100,14 +100,16 @@ class AllMedia {
     }
 }
 
+
+export default AllMedia;
 //Pruebas
 // Hay que añadir el .mjs en index para que las siguientes pruebas funcionen
 //===========================================================================//
-let trendingListCat = new AllMedia();
-let resultado = await trendingListCat.getData(
-    trendingListCat.categorias.accion,
-    ""
-);
+// let trendingListCat = new AllMedia();
+// let resultado = await trendingListCat.getData(
+//     trendingListCat.categorias.accion,
+//     ""
+// );
 
 // console.log(resultado);
 

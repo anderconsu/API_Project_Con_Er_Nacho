@@ -24,6 +24,7 @@ class trending {
      
 }
 
-let trendingList = new trending();
-let resultado = await trendingList.getData();
-console.log (resultado);
+export default trending;
+// let trendingList = new trending();
+// let resultado = await trendingList.getData();
+// console.log (resultado);
