@@ -26,10 +26,7 @@ class AllMedia {
     async getData(categoria, plataforma = "") {
         // Método para obtener los datos
         let lista = []; // Declarar la lista
-        if ((plataforma == "tv" && categoria == "28") || categoria == "12") {
-            //Condicion con la que se cambia la categoria si es una serie a la conjunta de ambas
-            categoria = "10759";
-        }
+        
         try {
             // log de categoria y plataforma para ver que estamos haciendo XD
             console.log("categoria " + categoria);
@@ -48,11 +45,20 @@ class AllMedia {
                 }
             );
             let dataMovie = await responseMovie.json(); // Obtener los datos de peliculas y tranformarlos en un objeto
+            // console.log(dataMovie);
+            dataMovie.results.map(element => {
+                element.media_type = "movie";
+                
+            });
             let trendingListCatMovie = dataMovie.results.map(
                 // Crear los objetos con los datos
                 (element) => new tvMovie(element)
             );
             //
+            if (categoria == "28" || categoria == "12") {
+                //Condicion con la que se cambia la categoria si es una serie a la conjunta de ambas
+                categoria = "10759";
+            }
             let responseTV = await fetch(
                 // Ejecutar la petición para las series
                 `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=false&language=es-ES&page=1&sort_by=popularity.desc&with_genres=${categoria}&watch_region=ES`,
@@ -66,6 +72,11 @@ class AllMedia {
                 }
             );
             let dataTV = await responseTV.json(); // Obtener los datos de series y tranformarlos en un objeto
+            // console.log(dataTV);
+            dataTV.results.map(element => {
+                element.media_type = "tv";
+                
+            });
             let trendingListCatTV = dataTV.results.map(
                 // Crear los objetos con los datos
                 (element) => new tvMovie(element)
@@ -92,11 +103,11 @@ class AllMedia {
 //Pruebas
 // Hay que añadir el .mjs en index para que las siguientes pruebas funcionen
 //===========================================================================//
-// let trendingListCat = new AllMedia();
-// let resultado = await trendingListCat.getData(
-//     trendingListCat.categorias.documental,
-//     ""
-// );
+let trendingListCat = new AllMedia();
+let resultado = await trendingListCat.getData(
+    trendingListCat.categorias.accion,
+    ""
+);
 
 // console.log(resultado);
 
