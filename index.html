@@ -15,14 +15,21 @@
 </head>
 <body>
     <header>
-        <div>
-            <img id = "logo" src="./images/Black and White Cinema Film Festival Logo.png" alt="Look & Film">
+        <div id="cabecera">
+
+            <div>
+                <img id = "logo" src="./images/Black and White Cinema Film Festival Logo.png" alt="Look & Film">
+            </div>
+            <form action="GET">
+                <input type="text" name="buscador" id="buscador" placeholder="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
         </div>
-        <form action="GET">
-            <input type="text" name="buscador" id="buscador" placeholder="Buscar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </form>
-        </header>
+        <div id="selector">
+            <button class="selectable">Peliculas</button>
+            <button class="selectable">Series</button>
+        </div>
+    </header>
         <nav>
             <!-- <select name="" id="">
             </select> -->

@@ -15,14 +15,28 @@ body {
     background-color: #000000;
     color: white;
 }
-header {
+#cabecera {
     display: flex;
     height: 13vh;
     border: 1px solid #5ce1e6;
     margin: 1rem;
 }
-header div {
+#cabecera div {
     margin-left: 0.5rem;
+}
+#selector {
+    margin: 0;
+    margin: 1rem;
+    padding: 0rem;
+    border: #ca3568;
+    display: flex;
+    gap: 0 1rem ;
+}
+.selectable {
+    font-size: 1.1rem;
+    width: 100%;
+    height: 2rem;
+    background-color: #ca3568;
 }
 form {
     width: 70%;
