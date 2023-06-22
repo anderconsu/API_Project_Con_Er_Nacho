@@ -10,14 +10,25 @@ class renderGeneral {
     this.trending = new trending();
   }
 
-  async renderGeneral() {
-    console.log("renderGeneral");
-    let trending = await this.trending.getData();
+  append(array) {
     let seccion = document.getElementById("postMedia");
-    trending.forEach(element => {
+    seccion.innerHTML = "";
+    array.forEach(element => {
         seccion.appendChild(element.renderTvMovie());
     });
   }
+  async renderGeneral() {
+    let trending = await this.trending.getData();
+    this.append(trending);
+    
+  }
+  async search(searchword){
+    let search = await this.searchQuery.search(searchword);
+    this.append(search);
+  }
+  async filter(genero, plataforma){
+    let filtrado = await this.categorias.getData(genero, plataforma)
+    this.append(filtrado)
+  }
 }
-
 export default renderGeneral;
