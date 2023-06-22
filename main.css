@@ -1,0 +1,67 @@
+/* Manual de estilo:
+- color azul para botones: #5ce1e6
+- color secundario rosa: #ca3568
+- color negro para el fondo de la web: #000000
+
+-  */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: #000000;
+    color: white;
+}
+header {
+    display: flex;
+}
+
+form {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    padding: 10px;
+}
+img {
+    width: 100%;
+}
+
+#listaCategorias {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#listaCategorias li {
+    width: calc(33% - 1rem);
+    border: 1px solid #5ce1e6;
+    margin: auto;
+}
+
+#listaCategorias button {
+    background-color: #5ce1e6;
+    width: 100%;
+    padding: 2px;
+}
+
+
+/* MOBILE FIRST */
+
+/* 440px */
+@media only screen and (min-width: 440px) {
+
+  
+  }
+  
+  /* 768px */
+  @media only screen and (min-width: 768px) {
+   
+  }
+  
