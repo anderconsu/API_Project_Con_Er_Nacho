@@ -9,7 +9,7 @@ class FunBotones {
         function isItSelected(){
             let buttons = document.getElementsByClassName('selectable')
             if (buttons[0].classList.contains("seleccionado") && buttons[1].classList.contains("seleccionado")) {
-                return "all"
+                return ""
             }else if (buttons[1].classList.contains("seleccionado")) {
                 return "tv"
             }else if (buttons[0].classList.contains("seleccionado")) {
@@ -115,7 +115,10 @@ class FunBotones {
             )
             document.getElementById("buscador").value = "";
         })
-
+        let logo = document.getElementById("logo");
+        logo.addEventListener("click", () => {
+            this.renderGeneral.renderGeneral();
+        })
     }
 }
 export default FunBotones;
