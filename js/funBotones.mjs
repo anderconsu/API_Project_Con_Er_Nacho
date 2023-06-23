@@ -108,6 +108,13 @@ class FunBotones {
             }
         });
         
+        let lupa = document.getElementById("lupa");
+        lupa.addEventListener("click", () => {
+            this.renderGeneral.search(
+                document.getElementById("buscador").value
+            )
+            document.getElementById("buscador").value = "";
+        })
 
     }
 }
