@@ -119,6 +119,7 @@ class FunBotones {
         logo.addEventListener("click", () => {
             this.renderGeneral.renderGeneral();
         })
+        console.log("all searched")
     }
 }
 export default FunBotones;
