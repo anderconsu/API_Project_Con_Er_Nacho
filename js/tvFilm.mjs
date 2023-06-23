@@ -25,12 +25,19 @@ class tvMovie {
     poster.src = this.poster_path;
     poster.alt = this.name;
     poster.classList.add("poster");
+    poster.addEventListener("click", () => {
+      window.open(this.url);
+    })
+    
     let divinfo = document.createElement("div");
     divinfo.classList.add("divinfo");
 
     let titulo = document.createElement("h2");
     titulo.textContent = this.name;
     titulo.classList.add("titulo");
+    titulo.addEventListener("click", () => {
+      window.open(this.url);
+    })
 
     let descripcion = document.createElement("p");
     descripcion.textContent = this.overview;
